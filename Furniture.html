@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+</head>
+<body>
+
+
+    <form id="form1" runat="server">
+        <div>
+            <table id="tblBeds">
+                <tr>
+                    <td>
+                        <p>Please input a positive number</p>Qty: 
+                        <input id="numb"/>
+                        <button type="button" onclick="myFunction()">Submit</button>
+                        <p id="demo"></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <asp:Button ID="ButtonBack" runat="server" Text="Back" />
+        </div>
+        <script>
+            function myFunction() {
+                var x, text;
+
+                // Get the value of the input field with id="numb"
+                x = document.getElementById("numb").value;
+
+                // If x is Not a Number or less than one or greater than 10
+                if (isNaN(x) || x < 1) {
+                    text = "Input not valid";
+                } else {
+                    text = "Input OK";
+                }
+                document.getElementById("demo").innerHTML = text;
+            }
+        </script>
+    </form>
+</body>
+</html>
